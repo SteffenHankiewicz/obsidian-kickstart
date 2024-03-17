@@ -27,7 +27,11 @@ jobs:
         with:
           files: .obsidian/
           dest: obsidian-sde.zip
-          
+
+      # clean-up unneeded corporate design files
+      - name: Clean-up other corporate designs
+        run: rm .obsidian/plugins/obsidian-better-export-pdf/data-*.json      
+      
       # create tag and release
       - name: Get current date
         id: date
