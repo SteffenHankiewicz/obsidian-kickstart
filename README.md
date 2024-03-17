@@ -4,7 +4,7 @@ This is a repository to easily start using Obsidian for Meeting Notes and to let
 # Usage
 To use this Kickstart first you need to install Obsidian of course. Afterwards open the Terminal and execute the following commands:
 
-## Go to Vault root folder
+## 1) Go to Vault root folder
 First go into the root folder where a new Vault shall be created:
 
 ```bash
@@ -12,10 +12,10 @@ First go into the root folder where a new Vault shall be created:
 cd ~/my-vault-folder
 ```
 
-## Download and install the correct corporate design
+## 2) Download and install the correct corporate design
 Now download and unzip the kickstarter files for the appropriate corporate design.
 
-### intranda corporate design
+### a) intranda corporate design
 Download and unzip the kickstarter files for the intranda corporate design:
 
 ```bash
@@ -24,7 +24,7 @@ unzip o.zip
 rm o.zip
 ```
 
-### Download and install the ScanDataExperts corporate design
+### b) ScanDataExperts corporate design
 Download and unzip the kickstarter files for the ScanDataExperts corporate design:
 
 ```bash
@@ -33,5 +33,5 @@ unzip o.zip
 rm o.zip
 ```
 
-## Use this kickstarter files in Obsidian
+## 3) Use this kickstarter files in Obsidian
 Now you can start Obsidian and use the files.
