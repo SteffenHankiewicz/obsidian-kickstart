@@ -13,24 +13,14 @@ jobs:
         uses: actions/checkout@v2
         
       # create intranda package
-      - name: zip intranda
-        uses: papeloto/action-zip@v1
-        with:
-          files: .obsidian/
-          dest: obsidian-intranda.zip
-          
+      - name: Use corporate design from intranda
+        run: zip -r obsidian-intranda.zip .obsidian -x .obsidian/plugins/obsidian-better-export-pdf/data-*.json
+                
       # create SDE package
       - name: Use corporate design from SDE 
         run: mv .obsidian/plugins/obsidian-better-export-pdf/data-sde.json .obsidian/plugins/obsidian-better-export-pdf/data.json
-      - name: zip SDE
-        uses: papeloto/action-zip@v1
-        with:
-          files: .obsidian/
-          dest: obsidian-sde.zip
-
-      # clean-up unneeded corporate design files
-      - name: Clean-up other corporate designs
-        run: rm -f .obsidian/plugins/obsidian-better-export-pdf/data-*.json      
+      - name: Use corporate design from intranda
+        run: zip -r obsidian-sde.zip .obsidian -x .obsidian/plugins/obsidian-better-export-pdf/data-*.json
       
       # create tag and release
       - name: Get current date
