@@ -11,21 +11,24 @@ jobs:
     steps:
       - name: checkout
         uses: actions/checkout@v2
-      - name: zip
-        uses: papeloto/action-zip@v1
-        with:
-          files: 00006382/
-          dest: 00006382.zip
-      - name: zip
-        uses: papeloto/action-zip@v1
-        with:
-          files: 12017607/
-          dest: 12017607.zip
-      - name: zip
+        
+      # create intranda package
+      - name: zip intranda
         uses: papeloto/action-zip@v1
         with:
           files: .obsidian/
-          dest: obsidian.zip
+          dest: obsidian-intranda.zip
+          
+      # create SDE package
+      - name: Use corporate design from SDE 
+        run: mv .obsidian/plugins/obsidian-better-export-pdf/data-sde.json .obsidian/plugins/obsidian-better-export-pdf/data.json
+      - name: zip SDE
+        uses: papeloto/action-zip@v1
+        with:
+          files: .obsidian/
+          dest: obsidian-sde.zip
+          
+      # create tag and release
       - name: Get current date
         id: date
         run: echo "date=$(date +'%Y-%m-%d %H:%M:%S %Z')" >> $GITHUB_OUTPUT
@@ -42,14 +45,28 @@ jobs:
           release_name: ${{ steps.date.outputs.date }}
           draft: false
           prerelease: false
-      - name: Upload books
-        id: upload-books
+
+      # upload for intranda    
+      - name: Upload intranda
+        id: upload-intranda
         uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }} # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps
-          asset_path: obsidian.zip
-          asset_name: obsidian.zip
+          asset_path: obsidian-intranda.zip
+          asset_name: obsidian-intranda.zip
+          asset_content_type: application/zip
+      
+      # upload for SDE    
+      - name: Upload SDE
+        id: upload-SDE
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }} # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps
+          asset_path: obsidian-sde.zip
+          asset_name: obsidian-sde.zip
           asset_content_type: application/zip
       
