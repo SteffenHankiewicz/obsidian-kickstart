@@ -1,4 +1,3 @@
-
 name: Zip Files
 
 on:
@@ -15,14 +14,153 @@ jobs:
       - name: zip
         uses: papeloto/action-zip@v1
         with:
-          files: .obsidian/
-          dest: obsidian.zip
-      - name: Upload binaries to release
-        uses: svenstaro/upload-release-action@v2
+          files: 00006382/
+          dest: 00006382.zip
+      - name: zip
+        uses: papeloto/action-zip@v1
         with:
-          repo_token: ${{ secrets.GITHUB_TOKEN }}
-          file: obsidian.zip
-          asset_name: mything
-          tag: ${{ github.ref }}
-          overwrite: true
-          body: "This is my release text"
+          files: 12017607/
+          dest: 12017607.zip
+      - name: zip
+        uses: papeloto/action-zip@v1
+        with:
+          files: books/
+          dest: books.zip
+      - name: zip
+        uses: papeloto/action-zip@v1
+        with:
+          files: documents/
+          dest: documents.zip
+      - name: zip
+        uses: papeloto/action-zip@v1
+        with:
+          files: graphics/
+          dest: graphics.zip
+      - name: zip
+        uses: papeloto/action-zip@v1
+        with:
+          files: letter1/
+          dest: letter1.zip
+      - name: zip
+        uses: papeloto/action-zip@v1
+        with:
+          files: letter2/
+          dest: letter2.zip
+      - name: zip
+        uses: papeloto/action-zip@v1
+        with:
+          files: record_groups/
+          dest: record_groups.zip
+      - name: zip
+        uses: papeloto/action-zip@v1
+        with:
+          files: 00006382/ 12017607/ documents/ letter1/ letter2/
+          recursive: false
+          dest: training.zip
+      - name: Get current date
+        id: date
+        run: echo "::set-output name=date::$(date +'%Y-%m-%d %H:%M:%S %Z')"
+      - name: Create tag name from date
+        id: tagdate
+        run: echo "::set-output name=tagdate::$(date +'%Y-%m-%d_%H-%M-%S_%Z')"
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ steps.tagdate.outputs.tagdate }}
+          release_name: ${{ steps.date.outputs.date }}
+          draft: false
+          prerelease: false
+      - name: Upload books
+        id: upload-books
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }} # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps
+          asset_path: books.zip
+          asset_name: books.zip
+          asset_content_type: application/zip
+      - name: Upload 00006382
+        id: upload-00006382
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }} # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps
+          asset_path: 00006382.zip
+          asset_name: 00006382.zip
+          asset_content_type: application/zip
+      - name: Upload 12017607
+        id: upload-12017607
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }} # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps
+          asset_path: 12017607.zip
+          asset_name: 12017607.zip
+          asset_content_type: application/zip
+      - name: Upload documents
+        id: upload-documents
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }} # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps
+          asset_path: documents.zip
+          asset_name: documents.zip
+          asset_content_type: application/zip
+      - name: Upload graphics
+        id: upload-graphics
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }} # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps
+          asset_path: graphics.zip
+          asset_name: graphics.zip
+          asset_content_type: application/zip
+      - name: Upload letter1
+        id: upload-letter1
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }} # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps
+          asset_path: letter1.zip
+          asset_name: letter1.zip
+          asset_content_type: application/zip
+      - name: Upload letter2
+        id: upload-letter2
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }} # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps
+          asset_path: letter2.zip
+          asset_name: letter2.zip
+          asset_content_type: application/zip
+      - name: Upload record_groups
+        id: upload-record_groups
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }} # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps
+          asset_path: record_groups.zip
+          asset_name: record_groups.zip
+          asset_content_type: application/zip
+      - name: Upload training
+        id: upload-training
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }} # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps
+          asset_path: training.zip
+          asset_name: training.zip
+          asset_content_type: application/zip
+  
