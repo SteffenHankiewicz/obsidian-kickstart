@@ -9,11 +9,8 @@ To use this Kickstart just open the Terminal in the root folder where a new Vaul
 # go to the Vault root folder
 cd ~/my-vault-folder
 
-# create a hidden obsidian config folder and put the kickstarter files there
-mkdir .obsidian;
-cd .obsidian;
-wget https://github.com/SteffenHankiewicz/obsidian-config/releases/download/2024-03-17_14-23-39_UTC/obsidian-intranda.zip -O o.zip;
-unzip o.zip;
+# download the kickstarter files and unzip these here
+wget https://github.com/SteffenHankiewicz/obsidian-kickstart/releases/latest/download/obsidian-intranda.zip -O o.zip
+unzip o.zip
 rm o.zip
-cd ..
 ```
