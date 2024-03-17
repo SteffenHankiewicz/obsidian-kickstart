@@ -3232,12 +3232,12 @@ var ColoredTagsPlugin = class extends import_obsidian.Plugin {
       return { background: background2, color: color2 };
     }
     if (input.toLowerCase().startsWith("todo")) {
-      const background2 = "lch(57 82 47)";
+      const background2 = "lch(46 132 39)";
       const color2 = "lch(100 0 360)";
       return { background: background2, color: color2 };
     }
     if (input.toLowerCase().startsWith("action")) {
-      const background2 = "lch(57 82 47)";
+      const background2 = "lch(46 132 39)";
       const color2 = "lch(100 0 360)";
       return { background: background2, color: color2 };
     }
