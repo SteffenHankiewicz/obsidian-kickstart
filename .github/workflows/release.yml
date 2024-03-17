@@ -28,10 +28,10 @@ jobs:
           dest: obsidian.zip
       - name: Get current date
         id: date
-        run: echo "::set-output name=date::$(date +'%Y-%m-%d %H:%M:%S %Z')"
+        run: echo "date=$(date +'%Y-%m-%d %H:%M:%S %Z')" >> $GITHUB_OUTPUT
       - name: Create tag name from date
         id: tagdate
-        run: echo "::set-output name=tagdate::$(date +'%Y-%m-%d_%H-%M-%S_%Z')"
+        run: echo "tagdate=$(date +'%Y-%m-%d_%H-%M-%S_%Z')" >> $GITHUB_OUTPUT
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
