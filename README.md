@@ -33,5 +33,5 @@ unzip o.zip
 rm o.zip
 ```
 
-## 3) Use this kickstarter files in Obsidian
+## 3) Use this kickstarter package in Obsidian
 Now you can start Obsidian and use the files.
