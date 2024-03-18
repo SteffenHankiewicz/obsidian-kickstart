@@ -1,5 +1,7 @@
 # Obsidian Kickstart
-This is a repository to easily start using Obsidian for Meeting Notes and to let these be converted to PDF files with custom design based on the intranda corporate design.
+This is a repository to easily start using Obsidian for Meeting Notes and to let these be converted to PDF files with custom corporate design. The adapted theme looks like this:
+
+
 
 # Usage
 Once this kickstart package is installed you can use the following tipps and tricks to benefit from it:
