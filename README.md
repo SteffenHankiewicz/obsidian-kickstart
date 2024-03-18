@@ -2,7 +2,34 @@
 This is a repository to easily start using Obsidian for Meeting Notes and to let these be converted to PDF files with custom design based on the intranda corporate design.
 
 # Usage
-To use this Kickstart first you need to install Obsidian of course. Afterwards open the Terminal and execute the following commands:
+Once this kickstart package is installed you can use the following tipps and tricks to benefit from it:
+
+## Tags
+In this package you find a plugin that colors your tags individually and manages to color the same tags in the same color across different documents. Simply use a tag like this and you will see: `#Peter`. This is ideal to tag tasks to individual users that will always be styled in the same color.
+
+If you are using the tags `#done` or `#erledigt` you will notice a bright grey tag color to mark things as done.
+
+## PDF Export
+The embedded PDF Export is customized to some specific corporate designs, dependent on the package that you installed inside of your Vault. To use it simply right click on a document in the left section and trigger the `Better Export PDF` plugin. It will generate a PDF file with the same name as your document and will store it directly beside it in the same folder.
+
+## Keyboard shortcuts
+These shortcuts are preconfigured additionally to Obsidians defaults:
+
+| Shortcut                   | Function                                                       |
+| -------------------------- | -------------------------------------------------------------- |
+| `option` + `command` + `g` | Highlight the current document in the file list                |
+| `option` + `command` + `f` | Open Finder for the path of the current document               |
+| `option` + `command` + `p` | Generate a PDF file with corporate design for the current note |
+
+## Page breaks
+Use this to create a page break inside of your generated PDF file:
+
+```html
+<div class="page"/>
+```
+
+# Installation
+To use this Kickstart package first you need to install Obsidian of course. Afterwards open the Terminal and execute the following commands:
 
 ## 1) Go to Vault root folder
 First go into the root folder where a new Vault shall be created:
@@ -34,23 +61,9 @@ rm o.zip
 ```
 
 ## 3) Use this kickstarter package in Obsidian
-Now you can start Obsidian and use the kickstart files:
+Now you can start Obsidian and use the kickstart files by opening the Vault that you prepared. 
 
 - You will notice simple clean layout for your notes
 - Using #tags will show these with different colors to highlight responsibilities
 - Using the tag #done or #erledigt will have a bright grey tag color to mark things as done
 - Use the configured PDF export (Better Export PDF) with your corporate design to get a shareable PDF stored directly beside your current document
-- Use these shortcuts to make your life easier:
-
-| Shortcut                   | Function                                                       |
-| -------------------------- | -------------------------------------------------------------- |
-| `option` + `command` + `g` | Highlight the current document in the file list                |
-| `option` + `command` + `f` | Open Finder for the path of the current document               |
-| `option` + `command` + `p` | Generate a PDF file with corporate design for the current note |
-
-# Tipps & Tricks
-Use this to create a page break inside of your generated PDF file:
-
-```html
-<div class="page"/>
-```
