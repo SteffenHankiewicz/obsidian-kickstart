@@ -1,7 +1,7 @@
 # Obsidian Kickstart
 This is a repository to easily start using Obsidian for Meeting Notes and to let these be converted to PDF files with custom corporate design. The adapted theme looks like this:
 
-
+![Usage of Obsidian to take notes](screenshot_1.png)
 
 # Usage
 Once this kickstart package is installed you can use the following tipps and tricks to benefit from it:
@@ -13,6 +13,8 @@ If you are using the tags `#done` or `#erledigt` you will notice a bright grey t
 
 ## PDF Export
 The embedded PDF Export is customized to some specific corporate designs, dependent on the package that you installed inside of your Vault. To use it simply right click on a document in the left section and trigger the `Better Export PDF` plugin. It will generate a PDF file with the same name as your document and will store it directly beside it in the same folder.
+
+![Generated PDF file](screenshot_2.png)
 
 ## Keyboard shortcuts
 These shortcuts are preconfigured additionally to Obsidians defaults:
