@@ -24,6 +24,8 @@ These shortcuts are preconfigured additionally to Obsidians defaults:
 | `option` + `command` + `g` | Highlight the current document in the file list                |
 | `option` + `command` + `f` | Open Finder for the path of the current document               |
 | `option` + `command` + `p` | Generate a PDF file with corporate design for the current note |
+| `option` + `up`            | Move current line upwards                                      |
+| `option` + `down`          | Move current line downwards                                    |
 
 ## Page breaks
 Use this to create a page break inside of your generated PDF file:
