@@ -48,3 +48,9 @@ Now you can start Obsidian and use the kickstart files:
 | `option` + `command` + `f` | Open Finder for the path of the current document               |
 | `option` + `command` + `p` | Generate a PDF file with corporate design for the current note |
 
+# Tipps & Tricks
+Use this to create a page break inside of your generated PDF file:
+
+```html
+<div class="page"/>
+```
