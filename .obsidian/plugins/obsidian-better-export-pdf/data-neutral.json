@@ -1,0 +1,26 @@
+{
+  "showTitle": false,
+  "maxLevel": "6",
+  "displayHeader": true,
+  "displayFooter": true,
+  "headerTemplate": "<div style=\"border-bottom: 0.25px solid #00719c; width: 100vw;margin:10px 40px; 40px 40px; color: #d4d4d4; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Inter, Ubuntu, sans-serif; font-size:8px;\"><p style=\"float: left;margin-top:20px;\"><!-- YOUR NAME HERE --></p><p style=\"margin-top:20px;margin-right:10px;float: right;\" class=\"title\"></p></div>",
+  "footerTemplate": "<div style=\"border-top: 0.25px solid #00719c; width: 100vw;margin:10px 40px; 40px 40px; color:#d4d4d4; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Inter, Ubuntu, sans-serif; font-size:8px;\"><p style=\"float: left;margin:5px;\" class=\"date\"></p><p style=\"float: right;margin:5px;\"><span class=\"pageNumber\"></span> / <span class=\"totalPages\"></span></p></div>",
+  "printBackground": false,
+  "generateTaggedPDF": false,
+  "displayMetadata": false,
+  "debug": true,
+  "prevConfig": {
+    "pageSise": "A4",
+    "marginType": "1",
+    "showTitle": false,
+    "open": false,
+    "scale": 80,
+    "landscape": false,
+    "marginTop": "10",
+    "marginBottom": "10",
+    "marginLeft": "10",
+    "marginRight": "10",
+    "displayHeader": true,
+    "displayFooter": true
+  }
+}
