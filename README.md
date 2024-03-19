@@ -66,6 +66,17 @@ unzip o.zip
 rm o.zip
 ```
 
+### c) neutral design  
+Download and unzip the kickstarter files for a neutral design without any logo and without a company name:
+
+```bash
+wget https://github.com/SteffenHankiewicz/obsidian-kickstart/releases/latest/download/obsidian-neutral.zip -O o.zip
+unzip o.zip
+rm o.zip
+```
+Editing the file `.obsidian/plugins/obsidian-better-export-pdf/data.json` allows you to simply use your personal name inside of this neutral header design. To do so simply replace the string `<!-- YOUR NAME HERE -->` With your name there
+
+
 ## 3) Use this kickstarter package in Obsidian
 Now you can start Obsidian and use the kickstart files by opening the Vault that you prepared. 
 
