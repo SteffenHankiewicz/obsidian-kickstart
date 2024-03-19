@@ -13,13 +13,19 @@ jobs:
         uses: actions/checkout@v2
         
       # create intranda package
-      - name: Use corporate design from intranda
+      - name: Use corporate design from intranda and zip it
         run: zip -r obsidian-intranda.zip .obsidian -x .obsidian/plugins/obsidian-better-export-pdf/data-*.json
                 
       # create SDE package
       - name: Use corporate design from SDE 
         run: mv .obsidian/plugins/obsidian-better-export-pdf/data-sde.json .obsidian/plugins/obsidian-better-export-pdf/data.json
-      - name: Use corporate design from intranda
+      - name: create SDE zip
+        run: zip -r obsidian-sde.zip .obsidian -x .obsidian/plugins/obsidian-better-export-pdf/data-*.json
+
+      # create neutral package
+      - name: Use no specific corporate design 
+        run: mv .obsidian/plugins/obsidian-better-export-pdf/data-neutral.json .obsidian/plugins/obsidian-better-export-pdf/data.json
+      - name: create neutral zip
         run: zip -r obsidian-sde.zip .obsidian -x .obsidian/plugins/obsidian-better-export-pdf/data-*.json
       
       # create tag and release
