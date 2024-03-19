@@ -26,7 +26,7 @@ jobs:
       - name: Use no specific corporate design 
         run: mv .obsidian/plugins/obsidian-better-export-pdf/data-neutral.json .obsidian/plugins/obsidian-better-export-pdf/data.json
       - name: create neutral zip
-        run: zip -r obsidian-sde.zip .obsidian -x .obsidian/plugins/obsidian-better-export-pdf/data-*.json
+        run: zip -r obsidian-neutral.zip .obsidian -x .obsidian/plugins/obsidian-better-export-pdf/data-*.json
       
       # create tag and release
       - name: Get current date
@@ -46,27 +46,39 @@ jobs:
           draft: false
           prerelease: false
 
-      # upload for intranda    
+      # upload intranda design 
       - name: Upload intranda
         id: upload-intranda
         uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }} # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
           asset_path: obsidian-intranda.zip
           asset_name: obsidian-intranda.zip
           asset_content_type: application/zip
       
-      # upload for SDE    
+      # upload SDE design   
       - name: Upload SDE
         id: upload-SDE
         uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }} # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
           asset_path: obsidian-sde.zip
           asset_name: obsidian-sde.zip
+          asset_content_type: application/zip
+          
+      # upload neutral design    
+      - name: Upload neutral
+        id: upload-neutral
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: obsidian-neutral.zip
+          asset_name: obsidian-neutral.zip
           asset_content_type: application/zip
       
