@@ -22,6 +22,12 @@ jobs:
       - name: create SDE zip
         run: zip -r obsidian-sde.zip .obsidian -x .obsidian/plugins/obsidian-better-export-pdf/data-*.json
 
+      # create Greifswald package
+      - name: Use corporate design from University Greifswald 
+        run: mv .obsidian/plugins/obsidian-better-export-pdf/data-greifswald.json .obsidian/plugins/obsidian-better-export-pdf/data.json
+      - name: create Greifswald zip
+        run: zip -r obsidian-greifswald.zip .obsidian -x .obsidian/plugins/obsidian-better-export-pdf/data-*.json
+
       # create neutral package
       - name: Use no specific corporate design 
         run: mv .obsidian/plugins/obsidian-better-export-pdf/data-neutral.json .obsidian/plugins/obsidian-better-export-pdf/data.json
@@ -68,6 +74,18 @@ jobs:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
           asset_path: obsidian-sde.zip
           asset_name: obsidian-sde.zip
+          asset_content_type: application/zip
+          
+      # upload Greifswald design   
+      - name: Upload Greifswald
+        id: upload-Greifswald
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: obsidian-greifswald.zip
+          asset_name: obsidian-greifswald.zip
           asset_content_type: application/zip
           
       # upload neutral design    
