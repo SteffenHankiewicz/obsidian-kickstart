@@ -66,7 +66,16 @@ unzip o.zip
 rm o.zip
 ```
 
-### c) neutral design  
+### c) University Greifswald 
+Download and unzip the kickstarter files for the University Greifswald corporate design:
+
+```bash
+wget https://github.com/SteffenHankiewicz/obsidian-kickstart/releases/latest/download/obsidian-greifswald.zip -O o.zip
+unzip o.zip
+rm o.zip
+```
+
+### d) neutral design  
 Download and unzip the kickstarter files for a neutral design without any logo and without a company name:
 
 ```bash
