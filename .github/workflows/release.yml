@@ -14,25 +14,31 @@ jobs:
         
       # create intranda package
       - name: Use corporate design from intranda and zip it
-        run: zip -r obsidian-intranda.zip .obsidian -x .obsidian/plugins/better-export-pdf/data-*.json
+        run: zip -r obsidian-intranda.zip .obsidian -x .obsidian/plugins/better-export-pdf/data-*.json .obsidian/plugins/colored-tags-wrangler/data-*.json
                 
       # create SDE package
       - name: Use corporate design from SDE 
         run: mv .obsidian/plugins/better-export-pdf/data-sde.json .obsidian/plugins/better-export-pdf/data.json
+      - name: Use tag colors from SDE 
+        run: mv .obsidian/plugins/colored-tags-wrangler/data-sde.json .obsidian/plugins/colored-tags-wrangler/data.json
       - name: create SDE zip
-        run: zip -r obsidian-sde.zip .obsidian -x .obsidian/plugins/better-export-pdf/data-*.json
+        run: zip -r obsidian-sde.zip .obsidian -x .obsidian/plugins/better-export-pdf/data-*.json .obsidian/plugins/colored-tags-wrangler/data-*.json
 
       # create Greifswald package
       - name: Use corporate design from University Greifswald 
         run: mv .obsidian/plugins/better-export-pdf/data-greifswald.json .obsidian/plugins/better-export-pdf/data.json
+      - name: Use tag colors from Greifswald 
+        run: mv .obsidian/plugins/colored-tags-wrangler/data-greifswald.json .obsidian/plugins/colored-tags-wrangler/data.json
       - name: create Greifswald zip
-        run: zip -r obsidian-greifswald.zip .obsidian -x .obsidian/plugins/better-export-pdf/data-*.json
+        run: zip -r obsidian-greifswald.zip .obsidian -x .obsidian/plugins/better-export-pdf/data-*.json .obsidian/plugins/colored-tags-wrangler/data-*.json
 
       # create neutral package
       - name: Use no specific corporate design 
         run: mv .obsidian/plugins/better-export-pdf/data-neutral.json .obsidian/plugins/better-export-pdf/data.json
+      - name: Use tag colors from neural design 
+        run: mv .obsidian/plugins/colored-tags-wrangler/data-neutral.json .obsidian/plugins/colored-tags-wrangler/data.json
       - name: create neutral zip
-        run: zip -r obsidian-neutral.zip .obsidian -x .obsidian/plugins/better-export-pdf/data-*.json
+        run: zip -r obsidian-neutral.zip .obsidian -x .obsidian/plugins/better-export-pdf/data-*.json .obsidian/plugins/colored-tags-wrangler/data-*.json
       
       # create tag and release
       - name: Get current date
