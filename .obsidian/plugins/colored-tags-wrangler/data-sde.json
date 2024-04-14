@@ -1,0 +1,314 @@
+{
+  "TagColors": {
+    "ColorPicker": [
+      {
+        "tag_name": "ToDo; Action; todo; action",
+        "color": {
+          "r": 255,
+          "g": 0,
+          "b": 0
+        },
+        "background_color": {
+          "r": 255,
+          "g": 66,
+          "b": 66
+        },
+        "luminance_offset": 0.15
+      },
+      {
+        "tag_name": "erledigt; done; Erledigt; Done",
+        "color": {
+          "r": 150,
+          "g": 150,
+          "b": 150
+        },
+        "background_color": {
+          "r": 199,
+          "g": 199,
+          "b": 199
+        },
+        "luminance_offset": 0.15
+      },
+      {
+        "tag_name": "intranda",
+        "color": {
+          "r": 61,
+          "g": 79,
+          "b": 169
+        },
+        "background_color": {
+          "r": 62,
+          "g": 78,
+          "b": 169
+        },
+        "luminance_offset": 0.15
+      },
+      {
+        "tag_name": "sde; SDE",
+        "color": {
+          "r": 22,
+          "g": 156,
+          "b": 154
+        },
+        "background_color": {
+          "r": 19,
+          "g": 156,
+          "b": 154
+        },
+        "luminance_offset": 0.15
+      },
+      {
+        "tag_name": "Matthias",
+        "color": {
+          "r": 46,
+          "g": 131,
+          "b": 142
+        },
+        "background_color": {
+          "r": 116,
+          "g": 185,
+          "b": 195
+        },
+        "luminance_offset": 0.15
+      },
+      {
+        "tag_name": "Jan",
+        "color": {
+          "r": 77,
+          "g": 54,
+          "b": 247
+        },
+        "background_color": {
+          "r": 98,
+          "g": 96,
+          "b": 251
+        },
+        "luminance_offset": 0.15
+      },
+      {
+        "tag_name": "Robert",
+        "color": {
+          "r": 45,
+          "g": 58,
+          "b": 108
+        },
+        "background_color": {
+          "r": 84,
+          "g": 105,
+          "b": 184
+        },
+        "luminance_offset": 0.15
+      },
+      {
+        "tag_name": "Steffen",
+        "color": {
+          "r": 19,
+          "g": 86,
+          "b": 150
+        },
+        "background_color": {
+          "r": 65,
+          "g": 150,
+          "b": 231
+        },
+        "luminance_offset": 0.15
+      },
+      {
+        "tag_name": "Sebastian",
+        "color": {
+          "r": 134,
+          "g": 60,
+          "b": 144
+        },
+        "background_color": {
+          "r": 203,
+          "g": 147,
+          "b": 210
+        },
+        "luminance_offset": 0.15
+      },
+      {
+        "tag_name": "Dominick",
+        "color": {
+          "r": 164,
+          "g": 129,
+          "b": 4
+        },
+        "background_color": {
+          "r": 204,
+          "g": 169,
+          "b": 40
+        },
+        "luminance_offset": 0.15
+      },
+      {
+        "tag_name": "Florian",
+        "color": {
+          "r": 103,
+          "g": 129,
+          "b": 9
+        },
+        "background_color": {
+          "r": 128,
+          "g": 160,
+          "b": 13
+        },
+        "luminance_offset": 0.15
+      },
+      {
+        "tag_name": "Marcel",
+        "color": {
+          "r": 118,
+          "g": 72,
+          "b": 20
+        },
+        "background_color": {
+          "r": 207,
+          "g": 126,
+          "b": 35
+        },
+        "luminance_offset": 0.15
+      },
+      {
+        "tag_name": "Jannek",
+        "color": {
+          "r": 211,
+          "g": 117,
+          "b": 29
+        },
+        "background_color": {
+          "r": 224,
+          "g": 108,
+          "b": 0
+        },
+        "luminance_offset": 0.15
+      },
+      {
+        "tag_name": "Simon",
+        "color": {
+          "r": 154,
+          "g": 9,
+          "b": 86
+        },
+        "background_color": {
+          "r": 190,
+          "g": 35,
+          "b": 117
+        },
+        "luminance_offset": 0.15
+      },
+      {
+        "tag_name": "Andrey",
+        "color": {
+          "r": 176,
+          "g": 17,
+          "b": 147
+        },
+        "background_color": {
+          "r": 176,
+          "g": 16,
+          "b": 147
+        },
+        "luminance_offset": 0.15
+      },
+      {
+        "tag_name": "Vanessa",
+        "color": {
+          "r": 144,
+          "g": 0,
+          "b": 184
+        },
+        "background_color": {
+          "r": 163,
+          "g": 2,
+          "b": 207
+        },
+        "luminance_offset": 0.15
+      },
+      {
+        "tag_name": "Geoff",
+        "color": {
+          "r": 9,
+          "g": 63,
+          "b": 225
+        },
+        "background_color": {
+          "r": 8,
+          "g": 63,
+          "b": 225
+        },
+        "luminance_offset": 0.15
+      },
+      {
+        "tag_name": "Martin",
+        "color": {
+          "r": 201,
+          "g": 148,
+          "b": 3
+        },
+        "background_color": {
+          "r": 201,
+          "g": 148,
+          "b": 2
+        },
+        "luminance_offset": 0.15
+      }
+    ],
+    "EnableMultipleTags": true,
+    "EnableSeparateBackground": true,
+    "EnableBackgroundOpacity": true,
+    "Values": {
+      "BackgroundOpacity": 0.3,
+      "LuminanceOffset": 0.15
+    }
+  },
+  "CSS": {
+    "NoteTags": true,
+    "NoteProperties": true,
+    "NoteBackgrounds": false,
+    "TagsNoWrap": true,
+    "TagsNoWrapText": "pre"
+  },
+  "FolderNote": {
+    "Enable": false,
+    "FolderTagLinks": [],
+    "EnableAutoDetect": true,
+    "EnableBackgroundOpacity": false,
+    "Values": {
+      "BackgroundOpacity": 0.45,
+      "ForceImportant": true,
+      "BorderRadius": "12px",
+      "Padding": "5px"
+    }
+  },
+  "Kanban": {
+    "Enable": true,
+    "EnableCards": false,
+    "EnableLists": false,
+    "HideHashtags": false,
+    "EnableBackgroundOpacity": false,
+    "Values": {
+      "BackgroundOpacity": 0.45,
+      "CardBackgroundOpacity": 0.2,
+      "CardBorderOpacity": 0.3,
+      "ListBackgroundOpacity": 0.2,
+      "ListBorderOpacity": 0.3
+    }
+  },
+  "Canvas": {
+    "Enable": false,
+    "EnableBackgroundOpacity": false,
+    "Values": {
+      "BackgroundOpacity": 0.45,
+      "CardBorderOpacity": 0.3,
+      "CardBackgroundLuminanceOffset": 0.15
+    }
+  },
+  "Debug": {
+    "Enable": false,
+    "EnableExperimentalCommands": false
+  },
+  "Info": {
+    "SettingsVersion": 14
+  }
+}
