@@ -97,16 +97,20 @@ footer {
 }
 
 @media print {
+
   @page {
-    size: A4;
     margin: 30mm 14mm 20mm 14mm;
   }
   .markdown-preview-view{
     padding: 0 !important;
   }
+
   h1 {
     margin-top: 0;
     margin-block-start: 0;
+  }
+  h2 {
+    margin-top: 10px;
   }
   h1, h2, h3, h4, h5, h6 {
     text-indent: 0px !important;
@@ -118,6 +122,7 @@ footer {
   .page { 
     page-break-before: always;
   }
+
 }
 
 /* COLOR SCHEMES
@@ -354,16 +359,27 @@ body:not(.default-font-color) span.cm-quote.cm-quote-1 {
   color: var(--quote-color);
 }
 
+
+
+
 /* Bold font */
 body:not(.default-font-color) strong,
 body:not(.default-font-color) span:not(.cm-highlight).cm-strong {
-  color: var(--strong-color);
+  color: white !important;
+  background-color: #e4374b;
+  font-style: normal;
+  padding: 0.04em 0.4em;
+  margin: 0px;
 }
 
 /* Italics */
 body:not(.default-font-color) em,
 body:not(.default-font-color) span:not(.cm-highlight).cm-em {
-  color: var(--em-color);
+  color: #e4374b !important;
+  background-color: #ffebed;
+  font-weight: bold !important;
+  font-style: normal !important;
+  padding: 0.04em 0.4em;
 }
 
 /* Styled highlights */
@@ -1090,15 +1106,59 @@ body:not(.no-kanban-styles)
 
 /* --------- intranda adaptions -----------  */
 
+/* for editing the markdown */
+
+div:has(> .cm-tag-erledigt){
+  color: rgb(175, 175, 175);
+}
+
+.cm-tag-erledigt ~ *, 
+.cm-tag-Erledigt ~ *, 
+.cm-tag-done ~ *, 
+.cm-tag-Done ~ * {
+  color: rgb(175, 175, 175);
+}
+
+/* for pdf generation */
+li:not(:has(> a[href*="erledigt"])),
+li:not(:has(> a[href*="Erledigt"])),
+li:not(:has(> a[href*="done"])),
+li:not(:has(> a[href*="Done"])) {
+  color: black;
+}
+
+/* for pdf generation as well */
+li:has(> a[href*="erledigt"]),
+li:has(> a[href*="Erledigt"]),
+li:has(> a[href*="done"]),
+li:has(> a[href*="Done"]) {
+  color: rgb(150, 150, 150);
+}
+
 /* Italics */
 body:not(.default-font-color) em,
 body:not(.default-font-color) span:not(.cm-highlight).cm-em {
-  color: white;
-  background-color: #c7254e;
+  color: #e4374b !important;
+  background-color: #ffebed;
+  font-weight: bold !important;
+  font-style: normal !important;
+  padding: 0.04em 0.4em;
+}
+
+/*
+.cm-em .cm-formatting .cm-formatting-em .cm-list-1{
+  color: green !important;
+}
+*/
+
+/* Bold */
+body:not(.default-font-color) strong,
+body:not(.default-font-color) span:not(.cm-highlight).cm-strong {
+  color: white !important;
+  background-color: #e4374b;
   font-style: normal;
-  padding: 0.04em 0.3em;
+  padding: 0.04em 0.4em;
   margin: 0px;
-  border-radius: 3px;
 }
 
 body:not(.default-font-color) del,
@@ -1129,13 +1189,18 @@ h2, .markdown-rendered h2, cm-header cm-header-2,
 .HyperMD-header-1, .inline-title[data-level='1'], 
 .HyperMD-list-line .cm-header-1,
 .HyperMD-header-2, .inline-title[data-level='2'], 
-.HyperMD-list-line .cm-header-2  {
+.HyperMD-list-line .cm-header-2{
   border-bottom: 1px solid var(--text-faint);
   margin-bottom: 4px;
+  padding-top:10px !important;
 }
 
-h3, .markdown-rendered h3{
+h3, .markdown-rendered h3, cm-header cm-header-3, 
+.HyperMD-header-3, .inline-title[data-level='3'], 
+.HyperMD-list-line .cm-header-3  {
+  border-bottom: 1px solid #e2e5e9;
   margin-bottom: 4px;
+  padding-top:10px !important;
 }
 
 img {
@@ -1161,6 +1226,10 @@ img {
 
 .markdown-source-view.mod-cm6 .cm-formatting-list-ul, .markdown-source-view.mod-cm6 .cm-formatting-list-ol {
   margin-right: 6px;
+}
+
+.markdown-rendered ul, .markdown-rendered ol {
+  margin-block-start: 6px !important;
 }
 
 /* --------- // intranda adaptions -----------  */
