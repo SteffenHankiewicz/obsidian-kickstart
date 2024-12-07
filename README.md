@@ -28,7 +28,7 @@ These shortcuts are preconfigured additionally to Obsidians defaults:
 | `option` + `down`                  | Move current line downwards                                    |
 | `option` + `command` + `Backspace` | Strike through the selected text                               |
 | `option` + `command` + `c`         | Format selected text as code                                   |
-| `==`                               | Format selected text as highlighted                            |
+| `option` + `command` + `h`         | Format selected text as highlighted                            |
 
 ## Page breaks
 Use this to create a page break inside of your generated PDF file:
@@ -97,10 +97,20 @@ Now you can start Obsidian and use the kickstart files by opening the Vault that
 - Using the tag #done or #erledigt will have a bright grey tag color to mark things as done
 - Use the configured PDF export (Better Export PDF) with your corporate design to get a shareable PDF stored directly beside your current document
 
-# Install a Theme Update
+# Update your setup
+
+## Install a Theme Update
 As this theme is under development you might want to update your vault to use the newest version of the theme. This is possible without any side effects for your data or your other configuration. E.g. you personal customizations and tag colors are not affected. Simply replace inside of the hidden `.obsidian` this file: `themes/intranda/theme.css`. Using a Mac or Linux simply do the following on commandline to automatically do it:
 
 ```bash
 cd /path/to/your/vault
 wget https://raw.githubusercontent.com/SteffenHankiewicz/obsidian-kickstart/refs/heads/main/.obsidian/themes/intranda/theme.css -O .obsidian/themes/intranda/theme.css
+```
+
+## Install Hotkey Update
+To update your hotkeys to fit to this documentation can replace your current hotkey settings simply by calling the following commands on commandline:
+
+```bash
+cd /path/to/your/vault
+wget https://raw.githubusercontent.com/SteffenHankiewicz/obsidian-kickstart/refs/heads/main/.obsidian/hotkeys.json -O .obsidian/hotkeys.json
 ```
