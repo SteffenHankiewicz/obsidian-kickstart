@@ -28,7 +28,7 @@ These shortcuts are preconfigured additionally to Obsidians defaults:
 | `option` + `down`                  | Move current line downwards                                    |
 | `option` + `command` + `Backspace` | Strike through the selected text                               |
 | `option` + `command` + `c`         | Format selected text as code                                   |
-| `option` + `command` + `h`         | Format selected text as highlighted                            |
+| `==`                               | Format selected text as highlighted                            |
 
 ## Page breaks
 Use this to create a page break inside of your generated PDF file:
