@@ -19,13 +19,16 @@ The embedded PDF Export is customized to some specific corporate designs, depend
 ## Keyboard shortcuts
 These shortcuts are preconfigured additionally to Obsidians defaults:
 
-| Shortcut                   | Function                                                       |
-| -------------------------- | -------------------------------------------------------------- |
-| `option` + `command` + `g` | Highlight the current document in the file list                |
-| `option` + `command` + `f` | Open Finder for the path of the current document               |
-| `option` + `command` + `p` | Generate a PDF file with corporate design for the current note |
-| `option` + `up`            | Move current line upwards                                      |
-| `option` + `down`          | Move current line downwards                                    |
+| Shortcut                           | Function                                                       |
+| ---------------------------------- | -------------------------------------------------------------- |
+| `option` + `command` + `g`         | Highlight the current document in the file list                |
+| `option` + `command` + `f`         | Open Finder for the path of the current document               |
+| `option` + `command` + `p`         | Generate a PDF file with corporate design for the current note |
+| `option` + `up`                    | Move current line upwards                                      |
+| `option` + `down`                  | Move current line downwards                                    |
+| `option` + `command` + `Backspace` | Strike through the selected text                               |
+| `option` + `command` + `c`         | Format selected text as code                                   |
+| `option` + `command` + `h`         | Format selected text as highlighted                            |
 
 ## Page breaks
 Use this to create a page break inside of your generated PDF file:
