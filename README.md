@@ -98,19 +98,22 @@ Now you can start Obsidian and use the kickstart files by opening the Vault that
 - Use the configured PDF export (Better Export PDF) with your corporate design to get a shareable PDF stored directly beside your current document
 
 # Update your setup
-
-## Install a Theme Update
-As this theme is under development you might want to update your vault to use the newest version of the theme. This is possible without any side effects for your data or your other configuration. E.g. you personal customizations and tag colors are not affected. Simply replace inside of the hidden `.obsidian` this file: `themes/intranda/theme.css`. Using a Mac or Linux simply do the following on commandline to automatically do it:
+If you like to update your setup with the newest files from this repository you just have to replace your current files as described below. It can happen manually inside of the hidden ´.obsidian` folder or automatically by using the commands for Mac and Linux below after switching on commandline first into the vaults main directory:
 
 ```bash
 cd /path/to/your/vault
+```
+
+## Install a Theme Update
+As this theme is under development you might want to update your vault to use the newest version of the theme. This is possible without any side effects for your data or your other configuration. E.g. you personal customizations and tag colors are not affected. Simply replace inside of the hidden `.obsidian` this file: `themes/intranda/theme.css`. Using a Mac or Linux simply go into the vaults main directory and do the following on commandline to automatically do it:
+
+```bash
 wget https://raw.githubusercontent.com/SteffenHankiewicz/obsidian-kickstart/refs/heads/main/.obsidian/themes/intranda/theme.css -O .obsidian/themes/intranda/theme.css
 ```
 
 ## Install Hotkey Update
-To update your hotkeys to fit to this documentation can replace your current hotkey settings simply by calling the following commands on commandline:
+To update your hotkeys to fit to this documentation can replace your current hotkey settings by overwriting the file `.obsidian/hotkeys.json`. On Mac or Linux simply call the following command on commandline from the the vaults main directory:
 
 ```bash
-cd /path/to/your/vault
 wget https://raw.githubusercontent.com/SteffenHankiewicz/obsidian-kickstart/refs/heads/main/.obsidian/hotkeys.json -O .obsidian/hotkeys.json
 ```
