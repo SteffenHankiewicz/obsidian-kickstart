@@ -93,3 +93,11 @@ Now you can start Obsidian and use the kickstart files by opening the Vault that
 - Using #tags will show these with different colors to highlight responsibilities
 - Using the tag #done or #erledigt will have a bright grey tag color to mark things as done
 - Use the configured PDF export (Better Export PDF) with your corporate design to get a shareable PDF stored directly beside your current document
+
+# Install a Theme Update
+As this theme is under development you might want to update your vault to use the newest version of the theme. This is possible without any side effects for your data or your other configuration. E.g. you personal customizations and tag colors are not affected. Simply replace inside of the hidden `.obsidian` this file: `themes/intranda/theme.css`. Using a Mac or Linux simply do the following on commandline to automatically do it:
+
+```bash
+cd /path/to/your/vault
+wget https://raw.githubusercontent.com/SteffenHankiewicz/obsidian-kickstart/refs/heads/main/.obsidian/themes/intranda/theme.css -O .obsidian/themes/intranda/theme.css
+```
