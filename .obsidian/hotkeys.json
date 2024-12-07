@@ -83,15 +83,6 @@
       "key": "ArrowDown"
     }
   ],
-  "editor:toggle-code": [
-    {
-      "modifiers": [
-        "Alt",
-        "Mod"
-      ],
-      "key": "c"
-    }
-  ],
   "editor:toggle-strikethrough": [
     {
       "modifiers": [
@@ -99,6 +90,24 @@
         "Mod"
       ],
       "key": "Backspace"
+    }
+  ],
+  "editor:toggle-highlight": [
+    {
+      "modifiers": [
+        "Alt",
+        "Mod"
+      ],
+      "key": "H"
+    }
+  ],
+  "editor:toggle-code": [
+    {
+      "modifiers": [
+        "Alt",
+        "Mod"
+      ],
+      "key": "C"
     }
   ]
 }
