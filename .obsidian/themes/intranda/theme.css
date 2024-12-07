@@ -1,6 +1,6 @@
 /*───────────────────────────────────────────────────────
 INTRANDA
-Version 1.1.0
+Version 1.2.0
 Created by @intranda
 
 Readme:
@@ -91,6 +91,7 @@ body {
 
   --line-width-adaptive: var(--line-width);
   --line-width-wide: calc(var(--line-width) + 12.5%);
+  --heading-spacing: calc(var(--p-spacing) * 1.3);
 }
 
 footer {
@@ -1192,6 +1193,19 @@ img {
 
 .markdown-rendered ul, .markdown-rendered ol {
   margin-block-start: 6px !important;
+}
+
+body:not(.default-font-color) mark strong, body:not(.default-font-color) mark em {
+  color: unset;
+}
+
+.markdown-rendered :is(p,pre,table,ul,ol) + :is(h1,h2,h3,h4,h5,h6), .markdown-rendered div:is(.el-p,.el-pre,.el-table,.el-ul,.el-ol) + div > :is(h1,h2,h3,h4,h5,h6) {
+  margin-top: var(--heading-spacing);
+  padding-bottom: 6px;
+}
+
+.markdown-rendered p {
+  margin-block-start: 0px;
 }
 
 /* --------- // intranda adaptions -----------  */
