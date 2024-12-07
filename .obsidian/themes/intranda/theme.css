@@ -1,6 +1,6 @@
 /*───────────────────────────────────────────────────────
 INTRANDA
-Version 1.0.0
+Version 1.1.0
 Created by @intranda
 
 Readme:
@@ -38,7 +38,8 @@ body {
   --strong-color: #5A88C2;
   --em-color: var(--pink);
   --quote-color: var(--green);
-
+  --bold-modifier: 400;
+  
   --tag-background-color-l: #bde1d3;
   --tag-font-color-l: #1d694b;
   --tag-background-color-d: #1d694b;
@@ -47,6 +48,8 @@ body {
   --highlight-background-color--normal: hsl(50deg 100% 50% / 15%) !important;
   --highlight-background-color-underline: hsl(50deg 100% 50% / 100%) !important;
   --highlight-background-color--active: hsl(50deg 100% 50% / 20%) !important;
+  --highlight-text-color: white;
+
 
   /* Font families */
   --font-text-theme: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
@@ -180,7 +183,7 @@ body.theme-light.is-mobile {
   --background-secondary-alt: var(--color-base-05);
   --background-modifier-box-shadow: rgba(0, 0, 0, 0.1);
   --background-modifier-cover: rgba(220, 220, 220, 0.4);
-  --text-highlight-bg-l: rgba(255, 208, 0, 0.4);
+  --text-highlight-bg-l:var(--color-red);
   --text-highlight-bg: var(--text-highlight-bg-l);
   --text-highlight-bg-active: rgba(255, 128, 0, 0.4);
   --input-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.12),
@@ -281,7 +284,7 @@ body.theme-dark.is-mobile {
   --background-secondary-alt: var(--color-base-30);
   --interactive-normal: var(--color-base-30);
   --interactive-hover: var(--color-base-35);
-  --text-highlight-bg-d: rgba(255, 208, 0, 0.4);
+  --text-highlight-bg-d: var(--color-red);
   --text-highlight-bg: var(--text-highlight-bg-d);
   --text-highlight-bg-active: rgba(255, 128, 0, 0.4);
   --text-selection: hsla(var(--interactive-accent-hsl), 0.25);
@@ -341,9 +344,9 @@ body.is-mobile.theme-dark.mobile-black-background {
 /* H2 styling */
 body.h2-underline h2,
 body.h2-underline .HyperMD-header.HyperMD-header-2.cm-line {
-  border-bottom: 2px solid var(--background-modifier-border);
+  border-bottom: 20px solid var(--background-modifier-border);
   width: 100%;
-  padding-bottom: 2px;
+  padding-bottom: 20px;
 }
 
 /* Hashtags font */
@@ -359,29 +362,6 @@ body:not(.default-font-color) span.cm-quote.cm-quote-1 {
   color: var(--quote-color);
 }
 
-
-
-
-/* Bold font */
-body:not(.default-font-color) strong,
-body:not(.default-font-color) span:not(.cm-highlight).cm-strong {
-  color: white !important;
-  background-color: #e4374b;
-  font-style: normal;
-  padding: 0.04em 0.4em;
-  margin: 0px;
-}
-
-/* Italics */
-body:not(.default-font-color) em,
-body:not(.default-font-color) span:not(.cm-highlight).cm-em {
-  color: #e4374b !important;
-  background-color: #ffebed;
-  font-weight: bold !important;
-  font-style: normal !important;
-  padding: 0.04em 0.4em;
-}
-
 /* Styled highlights */
 body:not(.default-font-color) mark strong,
 body:not(.default-font-color) mark em {
@@ -392,9 +372,11 @@ body:not(.default-font-color) mark em {
 span.cm-highlight,
 .markdown-preview-view mark,
 span.search-result-file-matched-text {
-  padding: 0.05em 0;
+  padding: 0.1em 0.3em;
   -webkit-box-decoration-break: clone;
   box-decoration-break: clone;
+  color: var(--highlight-text-color) !important;
+  
 }
 
 /* Fancy highlight */
@@ -1135,32 +1117,6 @@ li:has(> a[href*="Done"]) {
   color: rgb(150, 150, 150);
 }
 
-/* Italics */
-body:not(.default-font-color) em,
-body:not(.default-font-color) span:not(.cm-highlight).cm-em {
-  color: #e4374b !important;
-  background-color: #ffebed;
-  font-weight: bold !important;
-  font-style: normal !important;
-  padding: 0.04em 0.4em;
-}
-
-/*
-.cm-em .cm-formatting .cm-formatting-em .cm-list-1{
-  color: green !important;
-}
-*/
-
-/* Bold */
-body:not(.default-font-color) strong,
-body:not(.default-font-color) span:not(.cm-highlight).cm-strong {
-  color: white !important;
-  background-color: #e4374b;
-  font-style: normal;
-  padding: 0.04em 0.4em;
-  margin: 0px;
-}
-
 body:not(.default-font-color) del,
 body:not(.default-font-color) span:not(.cm-highlight).cm-del, .cm-strikethrough {
   color: var(--text-faint); 
@@ -1213,10 +1169,16 @@ img {
   font-size: var(--code-size);
   background-color: var(--code-background);
   vertical-align: baseline;
+  padding: 0.2em 0.3em !important;
 }
 
 .markdown-source-view.mod-cm6 .cm-content .HyperMD-header-2 {
-  margin-bottom: 3px !important;
+  margin-bottom: 6px !important;
+}
+
+.cm-s-obsidian .cm-line.HyperMD-header {
+  padding-top: var(--p-spacing);
+  padding-bottom: 6px;
 }
 
 .markdown-rendered ul.has-list-bullet{
