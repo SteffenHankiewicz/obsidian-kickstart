@@ -112,7 +112,7 @@ wget https://raw.githubusercontent.com/SteffenHankiewicz/obsidian-kickstart/refs
 ```
 
 ## Install Hotkey Update
-To update your hotkeys to fit to this documentation can replace your current hotkey settings by overwriting the file `.obsidian/hotkeys.json`. On Mac or Linux simply call the following command on commandline from the the vaults main directory:
+To update your hotkeys to fit to [this documentation](#keyboard-shortcuts) can replace your current hotkey settings by overwriting the file `.obsidian/hotkeys.json`. On Mac or Linux simply call the following command on commandline from the the vaults main directory:
 
 ```bash
 wget https://raw.githubusercontent.com/SteffenHankiewicz/obsidian-kickstart/refs/heads/main/.obsidian/hotkeys.json -O .obsidian/hotkeys.json
