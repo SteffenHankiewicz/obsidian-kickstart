@@ -98,7 +98,7 @@ Now you can start Obsidian and use the kickstart files by opening the Vault that
 - Use the configured PDF export (Better Export PDF) with your corporate design to get a shareable PDF stored directly beside your current document
 
 # Update your setup
-If you like to update your setup with the newest files from this repository you just have to replace your current files as described below. It can happen manually inside of the hidden ´.obsidian` folder or automatically by using the commands for Mac and Linux below after switching on commandline first into the vaults main directory:
+If you like to update your setup with the newest files from this repository you just have to replace your current files as described below. It can happen manually inside of the hidden `.obsidian` folder or automatically by using the commands for Mac and Linux below after switching on commandline first into the vaults main directory:
 
 ```bash
 cd /path/to/your/vault
