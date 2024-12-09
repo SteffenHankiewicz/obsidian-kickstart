@@ -1214,7 +1214,6 @@ body:not(.default-font-color) mark strong, body:not(.default-font-color) mark em
 
 body:not(.default-font-color) .markdown-preview-view blockquote, body:not(.default-font-color) span.cm-quote.cm-quote-1 {
   font-style: normal;
-  color: var(--quote-color);
   margin: 0 5px;
 }
 
@@ -1224,29 +1223,29 @@ body:not(.default-font-color) .markdown-preview-view blockquote, body:not(.defau
 }
 
 .markdown-source-view.mod-cm6.is-live-preview .HyperMD-quote:before, .markdown-source-view.mod-cm6 .cm-blockquote-border:before {
-  content: "\200b";
-  display: block;
-  width: 5px;
   border-inline-start: 6px solid #ccc;
-  color: transparent;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  pointer-events: none;
 }
 
 .markdown-rendered blockquote {
-  color: var(--blockquote-color);
-  font-style: var(--blockquote-font-style);
   background-color: #f9f9f9;
   border-inline-start: 6px solid #ccc;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  padding-inline-start: var(--size-4-6);
-  margin-inline-start: 0;
-  margin-inline-end: 0;
   margin: 20px !important;
-  padding: 15px;
+  padding: 10px 15px;
+}
+
+.cm-callout > div{
+  margin: -20px 0 !important;
+}
+
+.callout {
+  border: solid 6px;
+  border-color: rgba(var(--callout-color), var(--callout-border-opacity));
+  border-radius: 0;
+  margin: 2em 1em !important;
+}
+
+.callout-title {
+  margin: 10px 0;
 }
 
 /* --------- // intranda adaptions -----------  */
