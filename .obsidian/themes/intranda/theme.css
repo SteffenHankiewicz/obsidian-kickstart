@@ -1248,6 +1248,17 @@ body:not(.default-font-color) .markdown-preview-view blockquote, body:not(.defau
   margin: 10px 0;
 }
 
+.internal-embed{
+  background-color: #e7e7e72e;
+  border: 1px solid #ccc;
+  padding: 20px;
+}
+
+.embed-title {
+  color: #ccc;
+  font-weight: 300;
+}
+
 /* --------- // intranda adaptions -----------  */
 
 /* ─────────────────────────────────────────────────── */
