@@ -1131,7 +1131,7 @@ body:not(.default-font-color) span:not(.cm-highlight).cm-del, .cm-strikethrough 
   font-size: 0.8em;
 }
 .markdown-source-view.mod-cm6 .cm-line.HyperMD-codeblock {
-  /* margin-left: 25px !important; */
+  margin-left: 25px !important;
 }
 .markdown-source-view.mod-cm6 .cm-line.HyperMD-codeblock-begin {
   margin-top: 10px !important;
