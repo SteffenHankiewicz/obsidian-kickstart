@@ -1267,6 +1267,7 @@ body:not(.default-font-color) .markdown-preview-view blockquote, body:not(.defau
   background-color: #e7e7e72e;
   border: 1px solid #ccc;
   padding: 20px;
+  display: block;
 }
 
 .embed-title {
