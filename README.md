@@ -29,6 +29,7 @@ These shortcuts are preconfigured additionally to Obsidians defaults:
 | `option` + `command` + `Backspace` | Strike through the selected text                               |
 | `option` + `command` + `c`         | Format selected text as code                                   |
 | `option` + `command` + `h`         | Format selected text as highlighted                            |
+| `option` + `command` + `a`         | Convert list item to checklist item                            |
 
 ## Page breaks
 Use this to create a page break inside of your generated PDF file:
