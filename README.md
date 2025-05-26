@@ -98,6 +98,9 @@ Now you can start Obsidian and use the kickstart files by opening the Vault that
 - Using the tag #done or #erledigt will have a bright grey tag color to mark things as done
 - Use the configured PDF export (Better Export PDF) with your corporate design to get a shareable PDF stored directly beside your current document
 
+## 4) Use the templates as helper for every day
+There is a templates.zip file in the release download as well available. Use the files of that folder as kickstart to work with obsidians template mechanism.
+
 # Update your setup
 If you like to update your setup with the newest files from this repository you just have to replace your current files as described below. It can happen manually inside of the hidden `.obsidian` folder or automatically by using the commands for Mac and Linux below after switching on commandline first into the vaults main directory:
 
