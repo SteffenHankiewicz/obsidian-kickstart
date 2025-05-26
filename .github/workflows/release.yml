@@ -12,6 +12,10 @@ jobs:
       - name: checkout
         uses: actions/checkout@v2
         
+      # create template package
+      - name: create template package and zip it
+        run: zip -r templates.zip templates
+
       # create intranda package
       - name: Use corporate design from intranda and zip it
         run: zip -r obsidian-intranda.zip .obsidian -x .obsidian/plugins/better-export-pdf/data-*.json .obsidian/plugins/colored-tags-wrangler/data-*.json
@@ -57,6 +61,18 @@ jobs:
           release_name: ${{ steps.date.outputs.date }}
           draft: false
           prerelease: false
+
+      # upload templates 
+      - name: Upload templates
+        id: upload-templates
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: templates.zip
+          asset_name: templates.zip
+          asset_content_type: application/zip
 
       # upload intranda design 
       - name: Upload intranda
