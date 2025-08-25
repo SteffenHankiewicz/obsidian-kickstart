@@ -280,6 +280,7 @@ body.theme-dark.is-mobile {
     var(--accent-s),
     calc(var(--accent-l) + 3.8%)
   );
+  --code-normal: white;
   --titlebar-background-focused: var(--color-base-10);
   --background-modifier-form-field: var(--color-base-25);
   --background-secondary-alt: var(--color-base-30);
