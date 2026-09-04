@@ -12,7 +12,7 @@ In this package you find a plugin that colors your tags individually and manages
 If you are using the tags `#done` or `#erledigt` you will notice a bright grey tag color to mark things as done.
 
 ## PDF Export
-The embedded PDF Export is customized to some specific corporate designs, dependent on the package that you installed inside of your Vault. To use it simply right click on a document in the left section and trigger the `Better Export PDF` plugin. It will generate a PDF file with the same name as your document and will store it directly beside it in the same folder.
+The embedded PDF Export is customized to some specific corporate designs, dependent on the package that you installed inside of your Vault. To use it simply right click on a document in the left section and trigger the `Better Export PDF` plugin. It will generate a PDF file with the same name as your document and will store it directly beside it in the same folder. This happens without asking for a location, because the setting `Save next to the note` is switched on in this package. An already existing PDF of the same name is replaced. If you would rather pick the target folder yourself for every export, switch that setting off under `Settings` → `Better Export PDF`.
 
 ![Generated PDF file](screenshot_2.png)
 
@@ -56,8 +56,8 @@ Now download and unzip the kickstarter files for the appropriate corporate desig
 Download and unzip the kickstarter files for the intranda corporate design:
 
 ```bash
-wget https://github.com/SteffenHankiewicz/obsidian-kickstart/releases/latest/download/obsidian-intranda.zip -O o.zip
-unzip o.zip
+curl -L -o o.zip https://github.com/SteffenHankiewicz/obsidian-kickstart/releases/latest/download/obsidian-intranda.zip
+unzip -o o.zip
 rm o.zip
 ```
 
@@ -65,8 +65,8 @@ rm o.zip
 Download and unzip the kickstarter files for the ScanDataExperts corporate design:
 
 ```bash
-wget https://github.com/SteffenHankiewicz/obsidian-kickstart/releases/latest/download/obsidian-sde.zip -O o.zip
-unzip o.zip
+curl -L -o o.zip https://github.com/SteffenHankiewicz/obsidian-kickstart/releases/latest/download/obsidian-sde.zip
+unzip -o o.zip
 rm o.zip
 ```
 
@@ -74,8 +74,8 @@ rm o.zip
 Download and unzip the kickstarter files for the University Greifswald corporate design:
 
 ```bash
-wget https://github.com/SteffenHankiewicz/obsidian-kickstart/releases/latest/download/obsidian-greifswald.zip -O o.zip
-unzip o.zip
+curl -L -o o.zip https://github.com/SteffenHankiewicz/obsidian-kickstart/releases/latest/download/obsidian-greifswald.zip
+unzip -o o.zip
 rm o.zip
 ```
 
@@ -83,11 +83,11 @@ rm o.zip
 Download and unzip the kickstarter files for a neutral design without any logo and without a company name:
 
 ```bash
-wget https://github.com/SteffenHankiewicz/obsidian-kickstart/releases/latest/download/obsidian-neutral.zip -O o.zip
-unzip o.zip
+curl -L -o o.zip https://github.com/SteffenHankiewicz/obsidian-kickstart/releases/latest/download/obsidian-neutral.zip
+unzip -o o.zip
 rm o.zip
 ```
-Editing the file `.obsidian/plugins/obsidian-better-export-pdf/data.json` allows you to simply use your personal name inside of this neutral header design. To do so simply replace the string `<!-- YOUR NAME HERE -->` With your name there
+Editing the file `.obsidian/plugins/better-export-pdf/data.json` allows you to simply use your personal name inside of this neutral header design. To do so simply replace the string `<!-- YOUR NAME HERE -->` With your name there
 
 
 ## 3) Use this kickstarter package in Obsidian
@@ -112,12 +112,38 @@ cd /path/to/your/vault
 As this theme is under development you might want to update your vault to use the newest version of the theme. This is possible without any side effects for your data or your other configuration. E.g. you personal customizations and tag colors are not affected. Simply replace inside of the hidden `.obsidian` this file: `themes/intranda/theme.css`. Using a Mac or Linux simply go into the vaults main directory and do the following on commandline to automatically do it:
 
 ```bash
-wget https://raw.githubusercontent.com/SteffenHankiewicz/obsidian-kickstart/refs/heads/main/.obsidian/themes/intranda/theme.css -O .obsidian/themes/intranda/theme.css
+curl -fsSL -o .obsidian/themes/intranda/theme.css https://raw.githubusercontent.com/SteffenHankiewicz/obsidian-kickstart/refs/heads/main/.obsidian/themes/intranda/theme.css
 ```
+
+## Install a PDF Export Plugin Update
+
+The embedded `Better Export PDF` plugin gets updated from time to time. Replacing it does not touch your settings: your corporate design, header and footer stay in `data.json`, which is deliberately not overwritten here. Three files have to be replaced, `styles.css` among them, which did not exist in older versions:
+
+```bash
+mkdir -p .obsidian/plugins/better-export-pdf
+curl -fsSL -o .obsidian/plugins/better-export-pdf/main.js https://raw.githubusercontent.com/SteffenHankiewicz/obsidian-kickstart/refs/heads/main/.obsidian/plugins/better-export-pdf/main.js
+curl -fsSL -o .obsidian/plugins/better-export-pdf/manifest.json https://raw.githubusercontent.com/SteffenHankiewicz/obsidian-kickstart/refs/heads/main/.obsidian/plugins/better-export-pdf/manifest.json
+curl -fsSL -o .obsidian/plugins/better-export-pdf/styles.css https://raw.githubusercontent.com/SteffenHankiewicz/obsidian-kickstart/refs/heads/main/.obsidian/plugins/better-export-pdf/styles.css
+```
+
+Afterwards restart Obsidian, or switch the plugin off and on again under `Settings` → `Community plugins`, so that the new version is loaded.
 
 ## Install Hotkey Update
 To update your hotkeys to fit to [this documentation](#keyboard-shortcuts) can replace your current hotkey settings by overwriting the file `.obsidian/hotkeys.json`. On Mac or Linux simply call the following command on commandline from the the vaults main directory:
 
 ```bash
-wget https://raw.githubusercontent.com/SteffenHankiewicz/obsidian-kickstart/refs/heads/main/.obsidian/hotkeys.json -O .obsidian/hotkeys.json
+curl -fsSL -o .obsidian/hotkeys.json https://raw.githubusercontent.com/SteffenHankiewicz/obsidian-kickstart/refs/heads/main/.obsidian/hotkeys.json
+```
+
+## Update Everything At Once
+
+To apply all of the above in one go, run this from the vaults main directory:
+
+```bash
+mkdir -p .obsidian/themes/intranda .obsidian/plugins/better-export-pdf
+curl -fsSL -o .obsidian/themes/intranda/theme.css https://raw.githubusercontent.com/SteffenHankiewicz/obsidian-kickstart/refs/heads/main/.obsidian/themes/intranda/theme.css
+curl -fsSL -o .obsidian/hotkeys.json https://raw.githubusercontent.com/SteffenHankiewicz/obsidian-kickstart/refs/heads/main/.obsidian/hotkeys.json
+curl -fsSL -o .obsidian/plugins/better-export-pdf/main.js https://raw.githubusercontent.com/SteffenHankiewicz/obsidian-kickstart/refs/heads/main/.obsidian/plugins/better-export-pdf/main.js
+curl -fsSL -o .obsidian/plugins/better-export-pdf/manifest.json https://raw.githubusercontent.com/SteffenHankiewicz/obsidian-kickstart/refs/heads/main/.obsidian/plugins/better-export-pdf/manifest.json
+curl -fsSL -o .obsidian/plugins/better-export-pdf/styles.css https://raw.githubusercontent.com/SteffenHankiewicz/obsidian-kickstart/refs/heads/main/.obsidian/plugins/better-export-pdf/styles.css
 ```
