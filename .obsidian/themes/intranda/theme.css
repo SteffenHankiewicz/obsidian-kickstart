@@ -1318,18 +1318,13 @@ body:not(.default-font-color) .markdown-preview-view blockquote, body:not(.defau
   margin: 10px 0;
 }
 
-/* The frame stays exactly as it looks: faint gray fill, 1px #ccc outline, 20px of
-   inner padding. Only how it is drawn changes - the outline moves from `border` to an
-   inset shadow (an inset shadow is painted at the padding-box edge, i.e. where the
-   border used to sit), which frees the border to carry the gap before and after the
-   embed. A margin cannot be used: in live preview an embed is a direct child of
-   .cm-content, whose margins Obsidian zeroes precisely because CodeMirror does not
-   measure them - a vertical margin there breaks click and selection mapping.
-   `background-clip: padding-box` keeps the gray fill out of the spacer border. */
+/* An embed carries no frame - no fill, no outline - just the space around it: 20px of
+   inner padding (which also separates the caption from the image), and a transparent
+   border that opens the gap before and after the embed. The gap has to be a border,
+   not a margin: in live preview an embed is a direct child of .cm-content, whose
+   margins Obsidian zeroes precisely because CodeMirror does not measure them - a
+   vertical margin there breaks click and selection mapping. */
 .internal-embed{
-  background-color: #e7e7e72e;
-  background-clip: padding-box;
-  box-shadow: inset 0 0 0 1px #ccc;
   border: var(--block-gap) solid transparent;
   border-inline-width: 0;
   padding: 20px;
@@ -1350,9 +1345,9 @@ body:not(.default-font-color) .markdown-preview-view blockquote, body:not(.defau
 
 /* Obsidian shrinks image embeds to the image in the editor only
    (`.cm-content .image-embed { width: fit-content }`, so the resize handle hugs the
-   image) and leaves them full width in reading view. That made the frame a different
-   width in Obsidian than in the PDF export - match the editor in both. Images wider
-   than the text column still fill it, because of `max-width: 100%`. */
+   image) and leaves them full width in reading view. Match the editor in both, so the
+   centred caption below sits under the image rather than under the full text column.
+   Images wider than the text column still fill it, because of `max-width: 100%`. */
 .markdown-preview-view .internal-embed.image-embed {
   width: fit-content;
 }
@@ -1361,8 +1356,8 @@ body:not(.default-font-color) .markdown-preview-view blockquote, body:not(.defau
    span but never renders it, so the description is invisible in reading view and in the
    PDF export. Draw it with `content: attr(alt)` - which is only possible because the
    embed is a span: an ::after on the inner <img> is a replaced element and would never
-   be painted. The caption sits inside the frame, below the image, so it is carried
-   along by the embed's padding and never separated from it by a page break. */
+   be painted. The caption sits inside the embed, below the image, so the embed's own
+   padding keeps it clear of the image and a page break cannot separate the two. */
 .internal-embed.image-embed[alt]:not([alt=''])::after {
   content: attr(alt);
   display: block;
