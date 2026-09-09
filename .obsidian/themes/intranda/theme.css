@@ -1357,6 +1357,41 @@ body:not(.default-font-color) .markdown-preview-view blockquote, body:not(.defau
   width: fit-content;
 }
 
+/* Caption. Obsidian keeps the markdown alt text (`![caption](image.png)`) on the embed
+   span but never renders it, so the description is invisible in reading view and in the
+   PDF export. Draw it with `content: attr(alt)` - which is only possible because the
+   embed is a span: an ::after on the inner <img> is a replaced element and would never
+   be painted. The caption sits inside the frame, below the image, so it is carried
+   along by the embed's padding and never separated from it by a page break. */
+.internal-embed.image-embed[alt]:not([alt=''])::after {
+  content: attr(alt);
+  display: block;
+  padding-top: 14px;
+  font-size: 0.85em;
+  line-height: 1.4;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+/* A wikilink embed (`![[a1.png]]`) has no caption to show: Obsidian fills its alt with
+   the file name, which is not a description. */
+.internal-embed.image-embed[alt$='.png' i]::after,
+.internal-embed.image-embed[alt$='.jpg' i]::after,
+.internal-embed.image-embed[alt$='.jpeg' i]::after,
+.internal-embed.image-embed[alt$='.gif' i]::after,
+.internal-embed.image-embed[alt$='.webp' i]::after,
+.internal-embed.image-embed[alt$='.avif' i]::after,
+.internal-embed.image-embed[alt$='.bmp' i]::after,
+.internal-embed.image-embed[alt$='.svg' i]::after {
+  content: none;
+}
+
+/* In live preview the embed is an inline-flex box (see above), so the caption arrives
+   as a flex item and would be laid out beside the image - stack it instead. */
+.markdown-source-view.mod-cm6 .cm-line > .internal-embed.image-embed {
+  flex-direction: column;
+}
+
 .embed-title {
   color: #ccc;
   font-weight: 300;
